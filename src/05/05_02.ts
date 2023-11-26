@@ -10,5 +10,12 @@ return  houses.map(houses => houses.address.street.title)
 }
 
 export const createMessages = (houses: Array<HouseType>) => {
-    return houses.map(houses => `Hello guys from ${houses.address.street.title}`)
+
+    let callbackfn = (houses: HouseType) => {
+        return `Hello guys from ${houses.address.street.title}`;
+    }
+
+
+    let newArray = houses.map(callbackfn);
+    return newArray
 }
